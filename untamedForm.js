@@ -1,5 +1,5 @@
 /**
- * A script for handling token image changes when using Untamed Form in FoundryVTT v14.
+ * A script for handling token image changes when using PF2e Untamed Form in FoundryVTT v14.
  * Currently supports insect, aerial and animal forms.
  * 
  * Change the pathToTokenImg folder to where you are storing your untamed form images.
