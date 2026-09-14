@@ -1,0 +1,1 @@
+A collection of Foundry VTT scripts that I made for personal use.
