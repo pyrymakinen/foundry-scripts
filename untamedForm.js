@@ -5,6 +5,8 @@
  * Change the pathToTokenImg folder to where you are storing your untamed form images.
  * The files should be in the same format (png for example, you can change the format extension) and named like the form name (ape.png, bear.png, bull.png etc).
  * 
+ * First drag and drop the effect to token, when the untamed form effect and animal/insect/aerial form are active, run the script.
+ * 
  */
 
 const token = canvas.tokens.controlled[0];
@@ -30,15 +32,14 @@ const aerialFormEffect = actor.itemTypes.effect.find(e =>
 );
 
 if (animalFormEffect) {
-    formType = "Animal";
+    form = animalFormEffect.name.replace(`Spell Effect: Animal Form (`, "").slice(0, -1).toLowerCase();
 } else if (insectFormEffect) {
-    formType = "Insect";
+    form = insectFormEffect.name.replace(`Spell Effect: Insect Form (`, "").slice(0, -1).toLowerCase();
 } else if (aerialFormEffect) {
-    formType = "Aerial";
+    form = aerialFormEffect.name.replace(`Spell Effect: Aerial Form (`, "").slice(0, -1).toLowerCase();
 } else {
     token.document.update({ "texture.src": originalImg });
     return;
 }
 
-form = animalFormEffect.name.replace(`Spell Effect: ${formType} Form (`, "").slice(0, -1).toLowerCase();
 token.document.update({ "texture.src": `${pathToTokenImg}${form}${fileExtension}` });
